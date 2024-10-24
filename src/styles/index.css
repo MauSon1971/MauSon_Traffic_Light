@@ -1,10 +1,35 @@
+/* Estilos para semáforo */
+.traffic-light-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+}
+
+.traffic-light-soporte {
+  width: 50px;
+  height: 200px;
+  background-color: black;
+  margin-bottom: 10px;
+
+} 
+  
+  .traffic-light-box {
+    width: 150px;
+    height: 460px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 10%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+/* Estilo para las luces del semáforo */
 .traffic-light-button {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 3px solid black;
-    box-shadow: 0 0 10px rgba(104, 91, 91, 0.5);
     margin-top: 10px;
     background-color: color;
   }
@@ -18,19 +43,7 @@
   }
   
   .verde {
-    background-color: green;
-  }
-  
-  /* Estilos para la caja negra del semáforo */
-  .traffic-light-box {
-    width: 140px;
-    height: 400px;
-    background-color: black;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: space-around;
+    background-color: rgb(20, 219, 20);
   }
 
   .ilumina {
