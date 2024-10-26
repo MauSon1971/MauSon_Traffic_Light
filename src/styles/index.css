@@ -1,12 +1,62 @@
+/* Estilos para semáforo */
+.container-ppal-semaforo{
+  
+}
 
-/* 
+.traffic-light-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
 
-*/
+.traffic-light-soporte {
+  width: 50px;
+  height: 200px;
+  background-color: black;
+  margin-bottom: 10px;
+
+} 
+  
+  .traffic-light-box {
+    width: 150px;
+    min-height: 420px;
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+    transition: all 0.5s ease;
+
+  }
+
+/* Estilo para las luces del semáforo */
+.traffic-light-button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid black;
+  }
+  
+  .rojo {
+    background-color: red;
+  }
+  
+  .amarillo {
+    background-color: yellow;
+  }
+  
+  .verde {
+    background-color: rgb(20, 219, 20);
+  }
+
+  .purple{
+    background-color: #f006a2;
+  }
+
+  .ilumina {
+    box-shadow: 0 0 30px #ffeded;
+  }
