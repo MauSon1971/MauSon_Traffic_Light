@@ -26,27 +26,22 @@ const TrafficLight = () => {
         });
     };
 
-
-    const handleCuartaLuz = () => {
+    const toggleCuartaLuz = () => {
         setCuartaLuz(prev => !prev) //cambia el valor opuesto de la variable
     }
 
-    const iniSeq = () => {
-        if(!secuenciaActiva) {
+    const toggleSecuencia = () => {
+        if (!secuenciaActiva) {
             setSecuenciaActiva(true);
-            intervalRef.current = setInterval(() => {
-                handleColor();
-            }, 1000);
+            intervalRef.current = setInterval(handleColor, 1000)
+        } else {
+            clearInterval(intervalRef.current);
+            setSecuenciaActiva(false);
+            intervalRef.current = null;
         }
     }
-    
-    const stopSeq = () => {
-        clearInterval(intervalRef.current);
-        setSecuenciaActiva(false);
-    }
 
-    useEffect( () => {return () => clearInterval(intervalRef.current);},[]);
-
+    useEffect(() => { return () => clearInterval(intervalRef.current); }, []);
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-center">
@@ -61,15 +56,15 @@ const TrafficLight = () => {
                     <TrafficLightButton color="verde" iluminado={botonIluminado === "verde"} cambiarEstado={() => handleEstadoColorBtn("verde")}
                         className="mt-3" />
                     {cuartaLuz && <TrafficLightButton color="purple" iluminado={botonIluminado === "purple"} cambiarEstado={() => handleEstadoColorBtn("purple")}
-                        className="mt-3" />} 
+                        className="mt-3" />}
                 </div>
             </div>
             <div className="row container-ppal-acciones">
-                <button type="button" className="btn btn-secondary mt-3" onClick={handleColor}>Cambia Secuencia</button>
-                <button type="button" className="btn btn-secondary mt-3" onClick={handleCuartaLuz}>Muestra 4to Btn</button>
-                <button type="button" className="btn btn-primary mt-3" onClick={iniSeq}>Inicia Secuencia Auto</button>
-                <button type="button" className="btn btn-danger mt-3" onClick={stopSeq}>Detiene Secuencia Auto</button>
-
+                <button type="button" className="btn btn-secondary mt-3" onClick={handleColor}>Next Light</button>
+                <button type="button" className={`btn mt-3 ${cuartaLuz ? 'btn-danger' : 'btn-success'}`} onClick={toggleCuartaLuz}>
+                    {cuartaLuz ? 'Hide Btn #04' : 'Show Btn #04'}</button>
+                <button type="button" className={`btn mt-3 ${secuenciaActiva ? 'btn-danger' : 'btn-success'}`} 
+                onClick={toggleSecuencia}>{secuenciaActiva ? "Stop Auto" : "Run Auto"}</button>
             </div>
 
         </div>
