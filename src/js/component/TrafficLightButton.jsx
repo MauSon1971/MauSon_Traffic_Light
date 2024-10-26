@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 
-const TrafficLightButton = ({ color, iluminado, onClick }) => {
-    // const [iluminado, setIluminado] = useState(false);
-    // const iluminaLuces = () => {
-    //     setIluminado(!iluminado);
-    // }
+const TrafficLightButton = ({ color, iluminado, cambiarEstado }) => {
+
   return (
     <button
-      className={`btn traffic-light-button ${color} ${iluminado ? "ilumina" : ""}` } onClick={onClick}></button>
+      className={`btn traffic-light-button ${color} ${iluminado ? "ilumina" : ""}` } onClick={cambiarEstado}></button>
   );
 }
 

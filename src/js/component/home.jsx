@@ -1,12 +1,15 @@
 import React from "react";
 import TrafficLight from "./TrafficLight";
 
-//create your first component
 const Home = () => {
 	return (
-		<div className="container-principal d-flex justify-content-center align-items-center">
-		<TrafficLight />
-	  </div>
+		<div className="container-home d-flex flex-column align-items-center justify-content-center">
+
+			<div className="row container-ppal-semaforo">
+				<TrafficLight />
+			</div>
+
+		</div>
 	);
 };
 
